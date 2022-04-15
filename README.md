@@ -49,6 +49,7 @@
 # echo $PATH
 # export PATH=$PATH:directory
 
+# após rodar o script, confira o documento criado, que recebeu as informações coletadas pelo script
 
 # A tabela abaixo [ Cores ] modifica a formatação de cor original do texto
 # para utilizar deve-se inserir os valores de formatação em variáveis
@@ -86,7 +87,7 @@ doc1=`ls -t | head -1`
 
 # no caso acima, o arquivo que receberá as informações do script é chamdado de log_list + a data e hora atual
 # a data e hora será inserida automaticamente ao executar o script
-# o prefixo do nome do documento ( log_list ) pode ser alterado conforme necessário, alterando-o na linha 82
+# o prefixo do nome do documento ( log_list ) pode ser alterado conforme necessário, alterando-o na linha 83
 
 
 # será criado duas variáveis para receber o resultado adquirido de cada comando pelo script
@@ -257,7 +258,7 @@ echo "As informações iniciais necessárias foram coletadas." >> $doc1
 
 # criar um loop para retornar a pergunta inicial, caso a resposta seja inválida
 # esse loop será a função [ quest1 ]; caso a resposta seja inválida, o script irá chamar
-# a função, reiniciando o loop (linha 309)
+# a função, reiniciando o loop (linha 310)
 
 function quest1 {
 	echo "Deseja prosseguir? [ s / n ]"
@@ -357,3 +358,10 @@ echo
 echo -e "Relatório"
 echo -e "${blue}Itens conforme documentação: $okay${white}" 
 echo -e "${yellow}Itens que demandam verificação: $verificar${white}"
+
+# após rodar o script, confira o documento criado, que recebeu as informações coletadas pelo script
+echo
+echo -e "${green} Dê um cat no arquivo log que foi criado, e verifique as informações coletadas!!!${white}"
+echo
+echo -e "${green} Parabéns Jovem Padawan!!!${white}"
+
