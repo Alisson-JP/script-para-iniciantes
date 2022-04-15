@@ -15,6 +15,7 @@
 #--------------------------------------Considerações Iniciais---------------------------------------#
 # a primeira linha [ #!/bin/bash ] é OBRIGATÓRIA, nela está a informação de onde o script será rodado
 # todas as linhas que contém "#" no início são linhas comentadas, e não são executadas pelo script 
+# (única exceção é a primeira linha) - NÃO remova o # da primeira linha; 
 
 # Para executar esse script, siga os passos abaixo:
 # 1º - Crie um documento com vi, vim, nano ou outro editor de preferênca
