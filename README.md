@@ -36,11 +36,13 @@
 # após permissão adicionada, o documento passa a ser, de fato, um script
 # para verificar a permissão de execução concedida, pode-se fazê-lo com o comando
 # ls -la
-# para executá-lo, coloque o endereço completo a partir da pasta origem,
+# 5º - para executá-lo, coloque o endereço completo a partir da pasta origem,
 # ou "./" se estiver na pasta destino
-# exemplo 
-# /home/script.sh                  ou, se estiver no diretório /home
-# /home> ./script.sh
+# exemplo (se estiver no mesmo diretório onde o script foi criado)
+# ./script-teste.sh
+# caso esteja em outro local, pode-se digitar todo o caminho, exemplo:
+# /home/script-teste.sh
+
 # para não precisar colocar o endereço completo todas as vezes, é necessário incluí-lo
 # no endereçamento PATH
 # echo $PATH
@@ -52,6 +54,7 @@
 # e chamar a variável antes do texto que se pretende modificar
 # [ ${nomeDaCorDesejada} ]
 # as chaves {} entre a variável protege o conteúdo e a própria variável de cor
+
 
 #------------------Cores-------------------#
 red='\033[1;31m'
