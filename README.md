@@ -119,7 +119,7 @@ echo -e "$green------- Todos os direitos reservados ----------------------------
 # imprima na tela esse pedido de identificação
 # uma linha echo vazia serve para pular uma linha entre um comando e outro
 
-echo ""
+echo
 echo "Digite seu nome: "
 read nome1
 # variável [ $nome1 ] foi criada
