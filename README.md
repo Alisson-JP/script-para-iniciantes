@@ -85,7 +85,7 @@ doc1=`ls -t | head -1`
 
 # no caso acima, o arquivo que receberá as informações do script é chamdado de log_list + a data e hora atual
 # a data e hora será inserida automaticamente ao executar o script
-# o prefixo do nome do documento ( log_list ) pode ser alterado conforme necessário, alterando-o na linha 65
+# o prefixo do nome do documento ( log_list ) pode ser alterado conforme necessário, alterando-o na linha 81
 
 
 # será criado duas variáveis para receber o resultado adquirido de cada comando pelo script
@@ -126,6 +126,10 @@ read nome1
 echo "" >> $doc1
 # a linha acima serve para pular uma linha no arquivo de log
 echo "O usuário $nome1 iniciou o processo." >> $doc1
+# todo o trecho acima entre as aspas foi enviado ao doc1
+# esse envio foi feito através de >>
+# quando utilizamos >> é adicionado uma nova linha do endereço de destino
+# quando utilizamos apenas um > é substituído o conteúdo anterior
 
 
 # peça a senha, armazene essa senha recebida em uma variável
