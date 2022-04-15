@@ -254,7 +254,7 @@ echo "As informações iniciais necessárias foram coletadas." >> $doc1
 
 # criar um loop para retornar a pergunta inicial, caso a resposta seja inválida
 # esse loop será a função [ quest1 ]; caso a resposta seja inválida, o script irá chamar
-# a função, reiniciando o loop (linha 282)
+# a função, reiniciando o loop (linha 306)
 
 function quest1 {
 	echo "Deseja prosseguir? [ s / n ]"
@@ -310,10 +310,10 @@ esac
 
 #exemplo de condicional a seguir
 ## 
-## v1_ =` `								# o comando em uma variável precisa estar entre crases [ ` ]
-## if [ "$v1_ " == "" ]; then			# duplo == significa equivalência
+## v1_ =` `					# o comando em uma variável precisa estar entre crases [ ` ]
+## if [ $? -eq 0 ]; then			# - eq significa "igual a / equivalente"
 ##	  echo " v1 okay"
-##	  echo "" >> $doc1					# duplo >> irá adicionar novas linhas no destino, e não substituí-las
+##	  echo "" >> $doc1			# duplo >> irá adicionar novas linhas no destino, e não substituí-las
 ##	  echo " okay" >> $doc1
 ## else
 ##	  echo " Verificar  v1" >> $doc1
@@ -328,10 +328,10 @@ esac
 #---------------------------------------Funcionalidade do script-------------------------------------#
 # v1 = testar a primeira condição, segundo o CIS Control
 # v2 = testar a segunda condição, segundo o CIS Control, e assim por diante (v3, v4, etc...)
-# [ "$?" ] corresponde ao valor do último comando executado, onde:
-# [ "$?" == 0 ] significa que o comando retornou com o resultado verdadeiro/instalado/enable, etc;
-# [ "$?" == 1 ] significa que o comando retornou com o resultado falso/não instalado/ não ativado, etc;
-# [ "$?" == 2 ] significa que o comando retornou com o resultado de erro, ou alguma condição especial
+# [ $? ] corresponde ao valor do último comando executado, onde:
+# [ $? -eq 0 ] significa que o comando retornou com o resultado verdadeiro/instalado/enable, etc;
+# [ $? -eq 1 ] significa que o comando retornou com o resultado falso/não instalado/ não ativado, etc;
+# [ $? -eq 2 ] significa que o comando retornou com o resultado de erro, ou alguma condição especial
 
 
 # 1.1.1.1 Certifique-se de que a montagem dos sistemas de arquivos cramfs esteja desabilitada
