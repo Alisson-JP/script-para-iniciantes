@@ -112,9 +112,9 @@ senha_de_acesso=testeScript							# essa senha pode ser alterada ( após o símb
 # limpe a tela
 clear
 
-echo -e "$green------- Coloque aqui o nome da sua empresa, por exemplo ---------$white"
-echo -e "$green------- Coloque aqui o setor que vc trabalha, por exemplo -------$white"
-echo -e "$green------- Todos os direitos reservados ----------------------------$white"
+echo -e "${green}------- Coloque aqui o nome da sua empresa, por exemplo ---------${white}"
+echo -e "${green}------- Coloque aqui o setor que vc trabalha, por exemplo -------${white}"
+echo -e "${green}------- Todos os direitos reservados ----------------------------${white}"
 
 # peça o nome do usuário, crie uma variável para receber esse nome e
 # imprima na tela esse pedido de identificação
@@ -338,8 +338,8 @@ esac
 # [ $? -eq 2 ] significa que o comando retornou com o resultado de erro, ou alguma condição especial
 
 
-# 1.1.1.1 Certifique-se de que a montagem dos sistemas de arquivos cramfs esteja desabilitada
-echo -e "${yellow}1.1.1.1${white} Certifique-se de que a montagem dos sistemas de arquivos cramfs esteja desabilitada"
+# 1.1.1.1 Certifique-se de que a montagem cramfs esteja desabilitada nos arquivos do sistemas
+echo -e "${yellow}1.1.1.1${white} Certifique-se de que a montagem cramfs esteja desabilitada nos arquivos do sistemas"
 v1_cramfs=`modprobe -n -v cramfs | grep -E '(cramfs|install)'`
 if [ $? -eq 0 ]; then
 	echo "" >> $doc1
