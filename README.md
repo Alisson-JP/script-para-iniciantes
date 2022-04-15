@@ -86,7 +86,7 @@ doc1=`ls -t | head -1`
 
 # no caso acima, o arquivo que receberá as informações do script é chamdado de log_list + a data e hora atual
 # a data e hora será inserida automaticamente ao executar o script
-# o prefixo do nome do documento ( log_list ) pode ser alterado conforme necessário, alterando-o na linha 81
+# o prefixo do nome do documento ( log_list ) pode ser alterado conforme necessário, alterando-o na linha 82
 
 
 # será criado duas variáveis para receber o resultado adquirido de cada comando pelo script
@@ -178,10 +178,13 @@ echo "Iniciado varredura de informações do sistema." >> $doc1
 sleep 2
 # o comando [ sleep ] retém o script pelo tempo escolhido, até a executar a próxima linha
 
+# a partir desse ponto, iremos criar uma variável que irá receber o comando devido
+# o comando precisa estar entre crases [ ` ]
 
 # versão do servidor
 echo
 versao_server=`uname -m`
+# acima, criamos a variável "versao_server", que recebeu o comando "uname -m"
 echo -n -e "O sistema opera atualmente com a versão ${purple}$versao_server${white}"
 # o parâmetro [ -n ] na linha echo, serve para não pular de linha e ativar o próximo comando
 echo "" >> $doc1
@@ -254,7 +257,7 @@ echo "As informações iniciais necessárias foram coletadas." >> $doc1
 
 # criar um loop para retornar a pergunta inicial, caso a resposta seja inválida
 # esse loop será a função [ quest1 ]; caso a resposta seja inválida, o script irá chamar
-# a função, reiniciando o loop (linha 306)
+# a função, reiniciando o loop (linha 309)
 
 function quest1 {
 	echo "Deseja prosseguir? [ s / n ]"
