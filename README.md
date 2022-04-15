@@ -36,6 +36,7 @@
 # após permissão adicionada, o documento passa a ser, de fato, um script
 # para verificar a permissão de execução concedida, pode-se fazê-lo com o comando
 # ls -la
+
 # 5º - para executá-lo, coloque o endereço completo a partir da pasta origem,
 # ou "./" se estiver na pasta destino
 # exemplo (se estiver no mesmo diretório onde o script foi criado)
