@@ -142,15 +142,15 @@ read -s senha1
 clear
 
 # confira a senha usando condicionais (if, then, else)
-if [ $senha1 = $senha_de_acesso ];			# if = se
-then										# then = então
+if [ $senha1 = $senha_de_acesso ];					# if = se
+then									# then = então
 	echo -e "${green}Autenticação confirmada!${white}"
 	sleep 2
-else										# else = senão
+else									# else = senão
 	echo -e "${red}Falha na autenticação!${white}"
-	sleep 2									# sleep = tempo de descanso até o próximo comando
+	sleep 2								# sleep = tempo de descanso até o próximo comando
 	exit 1
-fi											# fi = "if" ao contrário, serve para indicar onde a condicional termina
+fi									# fi = "if" ao contrário, serve para indicar onde a condicional termina
 
 # o parâmetro -e em [ echo -e ] serve para adicionar os carateres especiais, 
 # quanto para adicionar as formatações de cores
