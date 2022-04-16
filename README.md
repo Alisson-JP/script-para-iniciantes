@@ -21,20 +21,25 @@
 # 1º - Crie um documento com vi, vim, nano ou outro editor de preferênca
 # exemplo, comando abaixo:
 # vi script-teste.sh
+# acima, usei a extensão [ .sh ] pq é a extensão própria da linguagem shell; 
+# contudo, no Linux, tudo é arquivo, então, não necessariamente é necessário essa ou outra extensão
+
 # 2º - Dentro do documento, tecle "Insert" para adicionar conteúdo 
 # 3º - insira todo esse conteúdo dentro do documento criado 
 # (selecione esse texto todo, ctrl + c, depois no documento, ctrl + v)
 
 # pode acontecer da sua máquina virtual não permitir o compartilhamento da área de transferência
 # caso isso ocorra, uma alternativa é acessar a própria máquina via "putty" (SSH)
-# o puuty vem por padrão com a área de transferência habilitada
+# o putty vem por padrão com a área de transferência habilitada
 
-# 4º - será necessário adicionar permissão executável para o o documento criado
+# 4º - será necessário adicionar permissão executável para o documento criado
 # exemplo, comando abaixo (considerando que o nome do script seja o mesmo):
 # chmod 755 script-teste.sh
+# acima, chmod é abreviação de "change mode", contudo, entendemos como alterar permissões
+# foi utilizado a  maneira octal, usando números (755);
 
 # após permissão adicionada, o documento passa a ser, de fato, um script
-# para verificar a permissão de execução concedida, pode-se fazê-lo com o comando
+# para verificar a permissão de execução concedida, pode-se fazê-lo com o comando (na pasta destino do script)
 # ls -la
 
 # 5º - para executá-lo, coloque o endereço completo a partir da pasta origem,
@@ -46,8 +51,6 @@
 
 # para não precisar colocar o endereço completo todas as vezes, é necessário incluí-lo
 # no endereçamento PATH
-# echo $PATH
-# export PATH=$PATH:directory
 
 # após rodar o script, confira o documento criado, que recebeu as informações coletadas pelo script
 
@@ -56,7 +59,6 @@
 # e chamar a variável antes do texto que se pretende modificar
 # [ ${nomeDaCorDesejada} ]
 # as chaves {} entre a variável protege o conteúdo e a própria variável de cor
-
 
 #------------------Cores-------------------#
 red='\033[1;31m'
@@ -67,7 +69,6 @@ purple='\033[1;35m'
 white='\033[1;37m'
 #------------------------------------------#
 
-
 # Iremos automatizar a criação de um novo documento sempre que o script for executado
 # utilizando a data como forma de diferenciação
 # esse doc [ log_list_date ] receberá todas as informações desse script
@@ -77,29 +78,24 @@ white='\033[1;37m'
 # o comando [ ls -t | head -1 ] busca na pasta/diretório o nome do último arquivo criado
 # a variável [ doc 1 ] receberá o nome do último arquivo criado, uma vez que será o nome + a data e hora de execução
 
-
 #-------------Criação de log file----------#
 arq=`date +%d%m%y%H%M`					
 touch /home > "log_list_$arq"
 doc1=`ls -t | head -1`
 #------------------------------------------#
 
-
 # no caso acima, o arquivo que receberá as informações do script é chamdado de log_list + a data e hora atual
 # a data e hora será inserida automaticamente ao executar o script
 # o prefixo do nome do documento ( log_list ) pode ser alterado conforme necessário, alterando-o na linha 83
-
 
 # será criado duas variáveis para receber o resultado adquirido de cada comando pelo script
 # na prática, para cada teste, se o teste retornar positivo, será adicionado 1 em [ okay ]
 # em contrapartida, será adicionado 1 em [ verificar ] sempre que o resultado retornar negativo
 
-
 #--------- Status de Verificação ----------#
 okay=0
 verificar=0
 #------------------------------------------#
-
 
 # abaixo, segue a senha escolhida para rodar o script, assim que solicitado
 # a senha faz alusão a Teste + Script
@@ -133,7 +129,6 @@ echo "O usuário $nome1 iniciou o processo." >> $doc1
 # quando utilizamos >> é adicionado uma nova linha do endereço de destino
 # quando utilizamos apenas um > é substituído o conteúdo anterior
 
-
 # peça a senha, armazene essa senha recebida em uma variável
 # para que a digitação da senha não apareça na tela, ou seja, modo silencioso, utilize o "-s"
 printf "Digite a senha: "
@@ -155,7 +150,6 @@ fi									# fi = "if" ao contrário, serve para indicar onde a condicional term
 
 # o parâmetro -e em [ echo -e ] serve para adicionar os carateres especiais, 
 # quanto para adicionar as formatações de cores
-
 
 # mostre uma mensagem de processo iniciando
 echo 
@@ -193,7 +187,6 @@ echo "Sistema atual: $versao_server" >> $doc1
 sleep 3
 echo
 
-
 # pesquise quem é o usuário e mostre na tela
 echo
 user_logado=`whoami`
@@ -201,7 +194,6 @@ echo -n -e "O usuário logado no momento é ${purple}$user_logado${white}"
 echo "" >> $doc1
 echo "O usuário fez a checagem logado como: $user_logado" >> $doc1
 sleep 3
-
 
 # pesquise quando a distro foi instalada
 echo
@@ -215,7 +207,6 @@ echo "Data de instalação dessa distribuição: " >> $doc1
 echo "$data_de_insta" >> $doc1
 sleep 3
 
-
 # status de memória
 echo
 status_de_memoria=`free -m`
@@ -225,7 +216,6 @@ echo "" >> $doc1
 echo "Status de memória livre: " >> $doc1
 echo "$status_de_memoria" >> $doc1
 sleep 3
-
 
 # status de uso de disco e suas partições
 echo
@@ -237,7 +227,6 @@ echo "Status do uso de disco e partições: " >> $doc1
 echo "$status_uso_de_disco" >> $doc1
 sleep 3
 
-
 # status do tempo que a máquina está rodando
 echo
 status_tempo_running=`uptime`
@@ -248,17 +237,15 @@ echo "O sistema está rodando há:" >> $doc1
 echo "$status_tempo_running" >> $doc1
 sleep 3
 
-
 # mostre uma mensagem de término de coleta das informações iniciais, apresentando o usuário
 echo
 echo "$nome1, as informações iniciais necessárias foram coletadas."
 echo "" >> $doc1
 echo "As informações iniciais necessárias foram coletadas." >> $doc1
 
-
 # criar um loop para retornar a pergunta inicial, caso a resposta seja inválida
 # esse loop será a função [ quest1 ]; caso a resposta seja inválida, o script irá chamar
-# a função, reiniciando o loop (linha 310)
+# a função, reiniciando o loop (linha 297)
 
 function quest1 {
 	echo "Deseja prosseguir? [ s / n ]"
@@ -311,7 +298,6 @@ case $resp1 in
 	;;
 esac
 
-
 #exemplo de condicional a seguir
 ## 
 ## v1_ =` `					# o comando em uma variável precisa estar entre crases [ ` ]
@@ -336,7 +322,6 @@ esac
 # [ $? -eq 0 ] significa que o comando retornou com o resultado verdadeiro/instalado/enable, etc;
 # [ $? -eq 1 ] significa que o comando retornou com o resultado falso/não instalado/ não ativado, etc;
 # [ $? -eq 2 ] significa que o comando retornou com o resultado de erro, ou alguma condição especial
-
 
 # 1.1.1.1 Certifique-se de que a montagem cramfs esteja desabilitada nos arquivos do sistemas
 echo -e "${yellow}1.1.1.1${white} Certifique-se de que a montagem cramfs esteja desabilitada nos arquivos do sistemas"
@@ -364,4 +349,3 @@ echo
 echo -e "${green} Dê um cat no arquivo log que foi criado, e verifique as informações coletadas!!!${white}"
 echo
 echo -e "${green} Parabéns Jovem Padawan!!!${white}"
-
