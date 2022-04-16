@@ -119,6 +119,7 @@ echo -e "${green}------- Todos os direitos reservados --------------------------
 echo
 echo "Digite seu nome: "
 read nome1
+# o comando [ read ] busca as informações que serão digitadas pelo usuário e as adiciona na variável que escolhermos
 # variável [ $nome1 ] foi criada
 # envie para o arquivo log [ $doc1 ] a informação obtida
 echo "" >> $doc1
@@ -133,6 +134,8 @@ echo "O usuário $nome1 iniciou o processo." >> $doc1
 # para que a digitação da senha não apareça na tela, ou seja, modo silencioso, utilize o "-s"
 printf "Digite a senha: "
 read -s senha1
+# o comando [ printf ] é como o echo, porém muito mais elaborado
+# com ele podemos fazer em uma única linha de código o que seria necessário diversas linhas empregando o echo
 # a variável [ $senha1 ] foi criada
 # limpe a tela após receber a senha
 clear
@@ -149,7 +152,7 @@ else									# else = senão
 fi									# fi = "if" ao contrário, serve para indicar onde a condicional termina
 
 # o parâmetro -e em [ echo -e ] serve para adicionar os carateres especiais, 
-# quanto para adicionar as formatações de cores
+# tanto quanto para adicionar as formatações de cores
 
 # mostre uma mensagem de processo iniciando
 echo 
@@ -245,7 +248,7 @@ echo "As informações iniciais necessárias foram coletadas." >> $doc1
 
 # criar um loop para retornar a pergunta inicial, caso a resposta seja inválida
 # esse loop será a função [ quest1 ]; caso a resposta seja inválida, o script irá chamar
-# a função, reiniciando o loop (linha 297)
+# a função, reiniciando o loop (linha 300)
 
 function quest1 {
 	echo "Deseja prosseguir? [ s / n ]"
