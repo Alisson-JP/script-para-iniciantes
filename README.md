@@ -9,7 +9,7 @@
 # - status de memória
 # - status de uso de disco e suas partições
 # - status do tempo que a máquina está rodando
-# e, irá efetuar a verificação de um item de hardening usando a documentação do CIS Control como referência
+# e, irá efetuar a verificação de 01 item de hardening usando a documentação do CIS Control como referência
 
 #---------------------------------------------------------------------------------------------------#
 #--------------------------------------Considerações Iniciais---------------------------------------#
