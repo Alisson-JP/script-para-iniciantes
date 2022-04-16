@@ -117,10 +117,12 @@ echo -e "${green}------- Todos os direitos reservados --------------------------
 # uma linha echo vazia serve para pular uma linha entre um comando e outro
 
 echo
-echo "Digite seu nome: "
+printf "Digite seu nome: "
 read nome1
 # o comando [ read ] busca as informações que serão digitadas pelo usuário e as adiciona na variável que escolhermos
 # variável [ $nome1 ] foi criada
+# o comando [ printf ] é como o echo, porém muito mais elaborado
+# com ele podemos fazer em uma única linha de código o que seria necessário diversas linhas empregando o echo
 # envie para o arquivo log [ $doc1 ] a informação obtida
 echo "" >> $doc1
 # a linha acima serve para pular uma linha no arquivo de log
@@ -134,8 +136,6 @@ echo "O usuário $nome1 iniciou o processo." >> $doc1
 # para que a digitação da senha não apareça na tela, ou seja, modo silencioso, utilize o "-s"
 printf "Digite a senha: "
 read -s senha1
-# o comando [ printf ] é como o echo, porém muito mais elaborado
-# com ele podemos fazer em uma única linha de código o que seria necessário diversas linhas empregando o echo
 # a variável [ $senha1 ] foi criada
 # limpe a tela após receber a senha
 clear
