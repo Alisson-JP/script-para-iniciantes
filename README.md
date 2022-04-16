@@ -2,7 +2,7 @@
 
 # --- Script criado por Alisson Pereira --- #
 
-# esse script irá capturar automaticamente as informações gerais de um ambiente CentOS7:
+# esse script irá capturar automaticamente as informações gerais de um ambiente Linux CentOS7:
 # - versão
 # - usuário
 # - quando a distro foi instalada
