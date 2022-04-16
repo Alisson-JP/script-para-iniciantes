@@ -349,6 +349,6 @@ echo -e "${yellow}Itens que demandam verificação: $verificar${white}"
 
 # após rodar o script, confira o documento criado, que recebeu as informações coletadas pelo script
 echo
-echo -e "${green} Dê um cat no arquivo log que foi criado, e verifique as informações coletadas!!!${white}"
+echo -e "${green}Dê um cat no arquivo log que foi criado, e verifique as informações coletadas!!!${white}"
 echo
-echo -e "${green} Parabéns Jovem Padawan!!!${white}"
+echo -e "${green}Parabéns Jovem Padawan!!!${white}"
